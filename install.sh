@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -xe
 
 echo "Building jwtc (shared)..."
 ninja
