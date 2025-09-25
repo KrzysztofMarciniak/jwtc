@@ -5,9 +5,9 @@ echo "Building jwtc (shared)..."
 ninja
 
 echo "Installing to /usr/local..."
-sudo cp libjwtc.so /usr/local/lib/
-sudo cp jwtc.h /usr/local/include/
-sudo ldconfig
+cp libjwtc.so /usr/local/lib/
+cp jwtc.h /usr/local/include/
+ldconfig
 
 echo "Installation complete!"
 echo "To use: Link with -ljwtc -ljson-c -lcrypto"
