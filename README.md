@@ -37,6 +37,14 @@ sudo ./install.sh
 
 After installation, link projects with `-ljwtc -ljson-c -lcrypto`.
 
+## Clean
+
+Clean compiled files.
+
+```shell
+ninja clean
+```
+
 ## Usage
 
 Include `jwtc.h` and link `-ljwtc -ljson-c -lcrypto`.
@@ -78,6 +86,8 @@ if (jwtc_validate(token, "secret", 0, &claims, &error)) {
 ### API
 
 (`char *jwtc_generate(const char *secret, int expiry_seconds, json_object *claims, char **error);`)
+
+
 (`bool jwtc_validate(const char *token, const char *secret, int time_offset_seconds, json_object **claims, char **error);`)
 
 #### Free returned strings and json_object_put claims.
