@@ -2,6 +2,15 @@
 
 A simple C library for generating and validating HS256 JWTs using json-c and OpenSSL.
 
+| Feature | **jwtc** | **[libjwt](https://github.com/benmcollins/libjwt)** |
+| :--- | :--- | :--- |
+| **Simplicity** | Simple | Extensive |
+| **Dependencies** | `json-c`, `OpenSSL`, `[ninja](https://github.com/ninja-build/ninja)` | `Jansson`, `OpenSSL` , `CMake` |
+| **Language** | C | C |
+| **Supported Algorithms** | HS256 | Multiple, including HS256, RS256, ES256, etc. |
+| **API** | Small, only generate and validate. | Comprehensive, including key management, custom headers, etc. |
+| **Installation** | Manual build and install script | Standard build process |
+| **License** | MIT | MPL-2.0 
 ## Dependencies
 
 - json-c
