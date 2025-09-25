@@ -1,0 +1,21 @@
+cc = gcc
+cflags = -std=c99 -Wall -Wextra -I. -O3
+libs = -ljson-c -lcrypto
+
+rule cc
+  command = $cc $cflags -c $in -o $out
+  description = CC $in
+
+rule ar
+  command = ar r $out $in && ranlib $out
+  description = AR $out
+
+rule link
+  command = $cc $in $libs -o $out
+  description = LINK $out
+
+build jwtc.o: cc jwtc.c
+build libjwtc.a: ar jwtc.o
+build test.o: cc test.c
+build test: link test.o libjwtc.a
+default libjwtc.a
