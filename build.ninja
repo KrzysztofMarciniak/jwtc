@@ -1,5 +1,9 @@
-cc = gcc
-cflags = -std=c99 -Wall -Wextra -I. -O3
+cc = cc
+ar = ar
+ranlib = ranlib
+
+cflags = -I.
+ldflags =
 libs = -ljson-c -lcrypto
 
 rule cc
@@ -7,15 +11,21 @@ rule cc
   description = CC $in
 
 rule ar
-  command = ar r $out $in && ranlib $out
+  command = $ar r $out $in && $ranlib $out
   description = AR $out
 
 rule link
-  command = $cc $in $libs -o $out
+  command = $cc $ldflags $in $libs -o $out
   description = LINK $out
 
+rule clean
+  command = rm -f *.o *.a test
+  description = CLEAN
+
+build clean: clean
 build jwtc.o: cc jwtc.c
 build libjwtc.a: ar jwtc.o
 build test.o: cc test.c
 build test: link test.o libjwtc.a
+
 default libjwtc.a
