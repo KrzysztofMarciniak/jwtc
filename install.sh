@@ -10,7 +10,7 @@ install -Dm644 libjwtc.so /usr/local/lib/libjwtc.so
 
 install -Dm644 jwtc.h /usr/local/include/jwtc.h
 
-ldconfig
+command -v ldconfig >/dev/null && ldconfig || true
 
 echo "Installation complete!"
 echo "To use: Link with -ljwtc -ljson-c -lcrypto"
