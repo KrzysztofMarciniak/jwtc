@@ -2,4 +2,4 @@
 test.o
 jwtc.o
 test
-libjwtc.a
+libjwtc.so
