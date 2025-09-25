@@ -1,12 +1,15 @@
 #!/bin/sh
-set -e   
+set -e
 
 echo "Building jwtc (shared)..."
 ninja
 
 echo "Installing to /usr/local..."
-cp libjwtc.so /usr/local/lib/
-cp jwtc.h /usr/local/include/
+
+install -Dm644 libjwtc.so /usr/local/lib/libjwtc.so
+
+install -Dm644 jwtc.h /usr/local/include/jwtc.h
+
 ldconfig
 
 echo "Installation complete!"
