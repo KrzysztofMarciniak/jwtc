@@ -1,4 +1,5 @@
 # jwtc
+<img width="250" height="250" alt="jwtc" src="https://github.com/user-attachments/assets/6d506421-7544-4c6d-9b2e-e2d496d70342" />
 
 A simple C library for generating and validating HS256 JWTs using json-c and OpenSSL.
 
