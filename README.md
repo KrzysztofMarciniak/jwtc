@@ -63,22 +63,22 @@ Include `jwtc.h` and link `-ljwtc -ljson-c -lcrypto`.
 ```c
 #include "jwtc.h"
 #include <json-c/json.h>
-
-json_object *claims = json_object_new_object();
-json_object_object_add(claims, "sub", json_object_new_string("user"));
-
-char *error = NULL;
-char *token = jwtc_generate("secret", 3600, claims, &error);
-json_object_put(claims);
-
-if (token) {
-    printf("%s\n", token);
-    free(token);
-} else {
-    printf("Error: %s\n", error);
-    free(error);
+int main() {
+    json_object *claims = json_object_new_object();
+    json_object_object_add(claims, "sub", json_object_new_string("user"));
+    char *error = NULL;
+    char *token = jwtc_generate("secret", 3600, claims, &error);
+    if (token) {
+        printf("Token: %s\n", token);
+        free(token);
+    }
+    if (error) {
+        printf("Error: %s\n", error);
+        free(error);
+    }
+    json_object_put(claims);
+    return 0;
 }
-
 ```
 ### Validate Token
 
