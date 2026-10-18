@@ -3,6 +3,10 @@
 
 A simple C library for generating and validating HS256 JWTs using json-c and OpenSSL.
 
+## Integration Example
+
+**An example usage of this tool:** [example-login-c-stack](https://github.com/KrzysztofMarciniak/example-login-c-stack).
+
 | Feature | **jwtc** | **[libjwt](https://github.com/benmcollins/libjwt)** |
 | :--- | :--- | :--- |
 | **Simplicity** | Simple | Extensive |
